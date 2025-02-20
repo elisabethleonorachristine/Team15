@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ehell\\Desktop\\Datamatiker\\Kode\u00F8velse\\CarApp w menu\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C823061E-FB8D-4863-A681-2D2AB9812A6D}|CarApp w menu\\CarApp w menu.csproj|c:\\users\\ehell\\desktop\\datamatiker\\kode\u00F8velse\\carapp w menu\\carapp w menu\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C823061E-FB8D-4863-A681-2D2AB9812A6D}|CarApp w menu\\CarApp w menu.csproj|solutionrelative:carapp w menu\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ehell\\Desktop\\Datamatiker\\Kode\u00F8velse\\CarApp w menu\\CarApp w menu\\Program.cs",
+              "RelativeDocumentMoniker": "CarApp w menu\\Program.cs",
+              "ToolTip": "C:\\Users\\ehell\\Desktop\\Datamatiker\\Kode\u00F8velse\\CarApp w menu\\CarApp w menu\\Program.cs*",
+              "RelativeToolTip": "CarApp w menu\\Program.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-19T19:39:23.541Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

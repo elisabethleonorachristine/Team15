@@ -1,0 +1,14 @@
+C:\Users\ehell\Desktop\Datamatiker\Kodeøvelse\CarApp w menu\CarApp w menu\bin\Debug\net8.0\CarApp w menu.exe
+C:\Users\ehell\Desktop\Datamatiker\Kodeøvelse\CarApp w menu\CarApp w menu\bin\Debug\net8.0\CarApp w menu.deps.json
+C:\Users\ehell\Desktop\Datamatiker\Kodeøvelse\CarApp w menu\CarApp w menu\bin\Debug\net8.0\CarApp w menu.runtimeconfig.json
+C:\Users\ehell\Desktop\Datamatiker\Kodeøvelse\CarApp w menu\CarApp w menu\bin\Debug\net8.0\CarApp w menu.dll
+C:\Users\ehell\Desktop\Datamatiker\Kodeøvelse\CarApp w menu\CarApp w menu\bin\Debug\net8.0\CarApp w menu.pdb
+C:\Users\ehell\Desktop\Datamatiker\Kodeøvelse\CarApp w menu\CarApp w menu\obj\Debug\net8.0\CarApp w menu.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ehell\Desktop\Datamatiker\Kodeøvelse\CarApp w menu\CarApp w menu\obj\Debug\net8.0\CarApp w menu.AssemblyInfoInputs.cache
+C:\Users\ehell\Desktop\Datamatiker\Kodeøvelse\CarApp w menu\CarApp w menu\obj\Debug\net8.0\CarApp w menu.AssemblyInfo.cs
+C:\Users\ehell\Desktop\Datamatiker\Kodeøvelse\CarApp w menu\CarApp w menu\obj\Debug\net8.0\CarApp w menu.csproj.CoreCompileInputs.cache
+C:\Users\ehell\Desktop\Datamatiker\Kodeøvelse\CarApp w menu\CarApp w menu\obj\Debug\net8.0\CarApp w menu.dll
+C:\Users\ehell\Desktop\Datamatiker\Kodeøvelse\CarApp w menu\CarApp w menu\obj\Debug\net8.0\refint\CarApp w menu.dll
+C:\Users\ehell\Desktop\Datamatiker\Kodeøvelse\CarApp w menu\CarApp w menu\obj\Debug\net8.0\CarApp w menu.pdb
+C:\Users\ehell\Desktop\Datamatiker\Kodeøvelse\CarApp w menu\CarApp w menu\obj\Debug\net8.0\CarApp w menu.genruntimeconfig.cache
+C:\Users\ehell\Desktop\Datamatiker\Kodeøvelse\CarApp w menu\CarApp w menu\obj\Debug\net8.0\ref\CarApp w menu.dll
