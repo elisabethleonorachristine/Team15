@@ -1,0 +1,15 @@
+F:\Freelance\Documents\Datamatikker Udd\Programmering\Team15\Michael\bin\Debug\net8.0\CarApp.exe
+F:\Freelance\Documents\Datamatikker Udd\Programmering\Team15\Michael\bin\Debug\net8.0\CarApp.deps.json
+F:\Freelance\Documents\Datamatikker Udd\Programmering\Team15\Michael\bin\Debug\net8.0\CarApp.runtimeconfig.json
+F:\Freelance\Documents\Datamatikker Udd\Programmering\Team15\Michael\bin\Debug\net8.0\CarApp.dll
+F:\Freelance\Documents\Datamatikker Udd\Programmering\Team15\Michael\bin\Debug\net8.0\CarApp.pdb
+F:\Freelance\Documents\Datamatikker Udd\Programmering\Team15\Michael\obj\Debug\net8.0\CarApp.GeneratedMSBuildEditorConfig.editorconfig
+F:\Freelance\Documents\Datamatikker Udd\Programmering\Team15\Michael\obj\Debug\net8.0\CarApp.AssemblyInfoInputs.cache
+F:\Freelance\Documents\Datamatikker Udd\Programmering\Team15\Michael\obj\Debug\net8.0\CarApp.AssemblyInfo.cs
+F:\Freelance\Documents\Datamatikker Udd\Programmering\Team15\Michael\obj\Debug\net8.0\CarApp.csproj.CoreCompileInputs.cache
+F:\Freelance\Documents\Datamatikker Udd\Programmering\Team15\Michael\obj\Debug\net8.0\CarApp.sourcelink.json
+F:\Freelance\Documents\Datamatikker Udd\Programmering\Team15\Michael\obj\Debug\net8.0\CarApp.dll
+F:\Freelance\Documents\Datamatikker Udd\Programmering\Team15\Michael\obj\Debug\net8.0\refint\CarApp.dll
+F:\Freelance\Documents\Datamatikker Udd\Programmering\Team15\Michael\obj\Debug\net8.0\CarApp.pdb
+F:\Freelance\Documents\Datamatikker Udd\Programmering\Team15\Michael\obj\Debug\net8.0\CarApp.genruntimeconfig.cache
+F:\Freelance\Documents\Datamatikker Udd\Programmering\Team15\Michael\obj\Debug\net8.0\ref\CarApp.dll

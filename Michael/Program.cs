@@ -2,8 +2,10 @@
 using System;
 using System.Runtime.ConstrainedExecution;
 using System.Security.Cryptography.X509Certificates;
+using Annettes_carapp.bil;
 
-namespace CarApp
+
+namespace CarApp.Michael
 {
     /*
     Applikation: Et program, der hjælper brugeren med en opgave.
@@ -29,63 +31,88 @@ namespace CarApp
 
             do
             {
-                Console.WriteLine("Press 1 for Read Car Details, 2 for Drive, 3 for Calculate Trip Pric, 4 for IsPalindrome, 5 for Print Car Detail");
-                MenuOption = Convert.ToInt32(Console.ReadLine());                
-
-                switch (MenuOption)
+                Console.WriteLine("Press 1 for Read Car Details \nPress 2 for Drive \nPress 3 for Calculate Trip Price \nPress 4 for IsPalindrome \nPress 5 for Print Car Detail \nPress 6 Print All Team Car \nPress 7 to Exit");
+                if (int.TryParse(Console.ReadLine(), out MenuOption))
                 {
-                    case 1:
-                        DinBil dinBil = new DinBil();
-                        dinBil.DinBilInfo();
-                        Console.ReadLine();
-                        Console.Clear();
-                        break;
+                    switch (MenuOption)
+                    {
+                        case 1:
+                            Console.Clear();
+                            DinBil dinBil = new DinBil();
+                            dinBil.DinBilInfo();
+                            Console.ReadLine();
+                            Console.Clear();
+                            break;
 
-                    case 2:
-                        Drive();
-                        Console.ReadLine();
-                        Console.Clear();
-                        Menu();
-                        break;
-                    case 3:
-                        double distance = Trip();                        
-                        Console.ReadLine();
+                        case 2:
+                            Console.Clear();
+                            Drive();
+                            Console.ReadLine();
+                            Console.Clear();
+                            break;
 
-                        break;
-                    case 4:
-                        Console.Write("Enter the odometer reading (km): ");
-                        if (int.TryParse(Console.ReadLine(), out int km))
-                        {
-                            IsPalindrome(km); // Kald metoden med km som argument (den printer selv resultatet)
-                        }
-                        else
-                        {
-                            Console.WriteLine("Invalid input. Please enter a valid number.");
-                        }
-                        Console.ReadLine();
-                        Console.Clear();
-                        Menu();
-                        break;
-                    case 5:
-                        if (DinBil.userCar != null)
-                        {
-                            DinBil.userCar.MinBil(); // Printer bilens info
-                        }
-                        else
-                        {
-                            Console.WriteLine("No car details available. Please enter car details first (Option 1).");
-                        }
-                        Console.ReadLine();
-                        Console.Clear();
-                        break;
-                    default:
-                        Console.WriteLine("Invalid choice");
-                        break;
+                        case 3:
+                            Console.Clear();
+                            double distance = Trip();
+                            Console.ReadLine();
+                            Console.Clear();
+                            break;
 
+                        case 4:
+                            Console.Clear();
+                            Console.Write("Enter the odometer reading (km): ");
+                            if (int.TryParse(Console.ReadLine(), out int km))
+                            {
+                                IsPalindrome(km); // Kald metoden med km som argument (den printer selv resultatet)
+                            }
+                            else
+                            {
+                                Console.WriteLine("Invalid input. Please enter a valid number.");
+                            }
+                            Console.ReadLine();
+                            Console.Clear();
+                            break;
+
+                        case 5:
+                            Console.Clear();
+                            if (DinBil.userCar != null)
+                            {
+                                DinBil.userCar.MinBil(); // Printer bilens info
+                            }
+                            else
+                            {
+                                Console.WriteLine("No car details available. Please enter car details first (Option 1).");
+                            }
+                            Console.ReadLine();
+                            Console.Clear();
+                            break;
+
+                        case 6:
+                            Console.Clear();
+                            ShowAllCars();
+                            Console.ReadLine();
+                            Console.Clear();
+                            break;
+
+                        case 7:
+                            Console.WriteLine("Exiting the program...");
+                            return;  // Stopper programmet
+
+                        default:
+                            Console.WriteLine("Invalid choice");
+                            break;
+                    }
                 }
-                Console.WriteLine("Please Enter Y to continue, any keys to terminate");
+                else
+                {
+                    Console.WriteLine("Invalid input. Please enter a valid number.");
+                }
+
+                // Spørger om brugeren vil fortsætte
+                Console.WriteLine("Please Enter Y to continue, any other key to terminate");
                 Choice = Convert.ToChar(Console.ReadLine());
-            }
+                Console.Clear();
+            } 
             while (Char.ToUpper(Choice) == 'Y');
         }
 
@@ -202,6 +229,15 @@ namespace CarApp
             }
 
             return isPalin;
+        }
+        static void ShowAllCars()
+        {
+            Bil michaelBil = new CarApp.Michael.Bil();
+            AnnetteBil annetteBil = new Annettes_carapp.bil.AnnetteBil();
+
+            Console.WriteLine($"Michael har en {michaelBil.carBrand} fra {michaelBil.carYear} med {michaelBil.totalMilage} km.");
+            
+            Console.WriteLine($"Annette har en {annetteBil.Brand} fra {annetteBil.Year} med {annetteBil.Odometer} km.");
         }
     }
 }

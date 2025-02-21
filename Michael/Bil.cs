@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarApp
+namespace CarApp.Michael
 {
     public class Bil
     {
@@ -25,7 +26,14 @@ namespace CarApp
             gearType = gear;
             totalMilage = milage;
         }
-
+        public Bil()
+        {
+            carBrand = "Audi";
+            carModel = "TT";
+            carYear = 2022;
+            totalMilage = 1000;
+            
+        }
         // Metode til at vise bilens info
         public void MinBil()
         {
