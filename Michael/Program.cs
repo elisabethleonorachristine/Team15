@@ -18,7 +18,7 @@ namespace CarApp.Michael
 
     class Program
     {
-
+        static double distance = 0;
         static void Main(string[] args)
         {
             Menu();
@@ -110,28 +110,20 @@ namespace CarApp.Michael
 
                 // Spørger om brugeren vil fortsætte
                 Console.WriteLine("Please Enter Y to continue, any other key to terminate");
-                Choice = Convert.ToChar(Console.ReadLine());
+                string input = Console.ReadLine();
+
+                if (string.IsNullOrWhiteSpace(input) || Char.ToUpper(input[0])!= 'Y')
+                {
+                   break;
+                }
+                
                 Console.Clear();
-            } 
-            while (Char.ToUpper(Choice) == 'Y');
+            }
+            while (true);
         }
 
+ 
 
-
-       /*
-        static void CarDetails()
-        {
-            Bil bil = new Bil();
-            bil.MinBil();
-
-        }
-       */
-        static void YourCarDetails()
-        {
-            DinBil dinBil = new DinBil();
-            dinBil.DinBilInfo();
-
-        }
         static void Drive()
         {
             if (DinBil.userCar == null)
@@ -156,7 +148,7 @@ namespace CarApp.Michael
                 }
             }
 
-            double distance;
+            
 
             Console.Write("Enter the distance you want to drive (km): ");
             while (!double.TryParse(Console.ReadLine(), out distance) || distance < 0)
@@ -171,9 +163,9 @@ namespace CarApp.Michael
         }
         static double Trip()
         {
-            double distance;
-            Console.Write("What is your current travel distance? ");
-
+            
+            Console.Write("What is your current travel distance? ");            
+            
             while (!double.TryParse(Console.ReadLine(), out distance) || distance < 0)
             {
                 Console.WriteLine("Invalid input. Please enter a positive number.");
@@ -185,23 +177,24 @@ namespace CarApp.Michael
         }
         static void CalculateTripCost(double distance)
         {
-            Console.Write("Enter fuel type (benzin/diesel): ");
-            string fuelType = Console.ReadLine().ToLower();
+            if (DinBil.userCar == null)
+            {
+                Console.WriteLine("No car details available. Please enter car details first (Option 1).");
+                return;
+            }
 
-            // Bestem brændstofpris
+            string fuelType = DinBil.userCar.fuelType; // Hent bilens fuelType
+
             double fuelPrice = (fuelType == "benzin") ? 13.49 : 12.29;
-
-            // Eksempel: km/l (kan ændres til en rigtig værdi)
             double kmPerL = 15;
 
-            // Beregn brændstofbehov og turpris
             double fuelNeeded = Math.Round(distance / kmPerL, 2);
             double tripCost = Math.Round(fuelNeeded * fuelPrice, 2);
 
-            // Udskriv resultatet
             Console.WriteLine($"\nFuel needed: {fuelNeeded} L");
             Console.WriteLine($"Total trip cost: {tripCost} kr\n");
         }
+
         static bool IsPalindrome(int km)
         {
             int original = km;  // Gem det originale tal
@@ -232,12 +225,15 @@ namespace CarApp.Michael
         }
         static void ShowAllCars()
         {
-            Bil michaelBil = new CarApp.Michael.Bil();
+            
+            Car michaelBil = new CarApp.Michael.Car();
             AnnetteBil annetteBil = new Annettes_carapp.bil.AnnetteBil();
 
             Console.WriteLine($"Michael har en {michaelBil.carBrand} fra {michaelBil.carYear} med {michaelBil.totalMilage} km.");
             
             Console.WriteLine($"Annette har en {annetteBil.Brand} fra {annetteBil.Year} med {annetteBil.Odometer} km.");
+            
+            Console.WriteLine($"Du har en {DinBil.userCar.carBrand} fra {DinBil.userCar.carYear} med {DinBil.userCar.totalMilage} km.");
         }
     }
 }
