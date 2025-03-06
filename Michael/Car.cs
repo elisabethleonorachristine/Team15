@@ -52,5 +52,34 @@
             isCarOn = false;
             Console.WriteLine("The car is now turned off.");
         }
+        public void Drive()
+        {
+            if (!isCarOn)
+            {
+                Console.WriteLine("The car is turned off. Do you want to turn it on? (yes/no)");
+                string input = Console.ReadLine().ToLower();
+
+                if (input == "yes")
+                {
+                    TurnCarOn();
+                }
+                else
+                {
+                    Console.WriteLine("You need to turn on the car before driving.");
+                    return;
+                }
+            }
+
+            Console.Write("Enter the distance you want to drive (km): ");
+            if (double.TryParse(Console.ReadLine(), out double distance) && distance > 0)
+            {
+                AddMilage((int)distance);
+                Console.WriteLine($"Total kilometers driven: {totalMilage} km");
+            }
+            else
+            {
+                Console.WriteLine("Invalid input. Please enter a positive number.");
+            }
+        }
     }
 }

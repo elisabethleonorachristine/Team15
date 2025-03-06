@@ -46,7 +46,7 @@ namespace CarApp.Michael
 
                         case 2:
                             Console.Clear();
-                            Drive();
+                            CheckCarAviability();
                             Console.ReadLine();
                             Console.Clear();
                             break;
@@ -124,7 +124,7 @@ namespace CarApp.Michael
 
  
 
-        static void Drive()
+        static void CheckCarAviability()
         {
             if (DinBil.userCar == null)
             {
@@ -132,34 +132,8 @@ namespace CarApp.Michael
                 return;
             }
 
-            if (!DinBil.userCar.isCarOn) // Hvis bilen er slukket, spørg om at tænde den
-            {
-                Console.WriteLine("The car is turned off. Do you want to turn it on? (yes/no)");
-                string input = Console.ReadLine().ToLower();
+            DinBil.userCar.Drive();
 
-                if (input == "yes")
-                {
-                    DinBil.userCar.TurnCarOn();
-                }
-                else
-                {
-                    Console.WriteLine("You need to turn on the car before driving.");
-                    return;
-                }
-            }
-
-            
-
-            Console.Write("Enter the distance you want to drive (km): ");
-            while (!double.TryParse(Console.ReadLine(), out distance) || distance < 0)
-            {
-                Console.WriteLine("Invalid input. Please enter a positive number.");
-                Console.Write("Enter the distance you want to drive (km): ");
-            }
-
-            DinBil.userCar.AddMilage((int)distance); // Opdater bilens totalmilage
-            
-            Console.WriteLine($"Total kilometers driven: {DinBil.userCar.totalMilage} km");
         }
         static double Trip()
         {
