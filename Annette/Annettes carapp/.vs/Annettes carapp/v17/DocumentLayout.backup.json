@@ -1,6 +1,10 @@
 {
   "Version": 1,
 <<<<<<< HEAD
+  "WorkspaceRootPath": "C:\\Git projekter\\Projekter 1. semester\\Carapp\\Team15\\Annette\\Annettes carapp\\",
+  "Documents": [],
+=======
+<<<<<<< HEAD
   "WorkspaceRootPath": "F:\\Freelance\\Documents\\Datamatikker Udd\\Programmering\\Team15\\Annette\\Annettes carapp\\",
   "Documents": [],
 =======
@@ -16,10 +20,14 @@
     }
   ],
 >>>>>>> 9a532f6657195226edaafceecc31031db374aab6
+>>>>>>> 269f9c9aac334fae5d7b79125feb3965f0611001
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
+<<<<<<< HEAD
+      "DocumentGroups": []
+=======
       "DocumentGroups": [
         {
           "DockedWidth": 200,
@@ -66,6 +74,7 @@
           ]
         }
       ]
+>>>>>>> 269f9c9aac334fae5d7b79125feb3965f0611001
     }
   ]
 }
