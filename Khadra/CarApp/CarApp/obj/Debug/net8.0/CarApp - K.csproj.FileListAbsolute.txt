@@ -1,0 +1,14 @@
+C:\Users\Khadr\OneDrive\Skrivebord\Programmering\CarApp\CarApp\bin\Debug\net8.0\CarApp - K.exe
+C:\Users\Khadr\OneDrive\Skrivebord\Programmering\CarApp\CarApp\bin\Debug\net8.0\CarApp - K.deps.json
+C:\Users\Khadr\OneDrive\Skrivebord\Programmering\CarApp\CarApp\bin\Debug\net8.0\CarApp - K.runtimeconfig.json
+C:\Users\Khadr\OneDrive\Skrivebord\Programmering\CarApp\CarApp\bin\Debug\net8.0\CarApp - K.dll
+C:\Users\Khadr\OneDrive\Skrivebord\Programmering\CarApp\CarApp\bin\Debug\net8.0\CarApp - K.pdb
+C:\Users\Khadr\OneDrive\Skrivebord\Programmering\CarApp\CarApp\obj\Debug\net8.0\CarApp - K.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Khadr\OneDrive\Skrivebord\Programmering\CarApp\CarApp\obj\Debug\net8.0\CarApp - K.AssemblyInfoInputs.cache
+C:\Users\Khadr\OneDrive\Skrivebord\Programmering\CarApp\CarApp\obj\Debug\net8.0\CarApp - K.AssemblyInfo.cs
+C:\Users\Khadr\OneDrive\Skrivebord\Programmering\CarApp\CarApp\obj\Debug\net8.0\CarApp - K.csproj.CoreCompileInputs.cache
+C:\Users\Khadr\OneDrive\Skrivebord\Programmering\CarApp\CarApp\obj\Debug\net8.0\CarApp - K.dll
+C:\Users\Khadr\OneDrive\Skrivebord\Programmering\CarApp\CarApp\obj\Debug\net8.0\refint\CarApp - K.dll
+C:\Users\Khadr\OneDrive\Skrivebord\Programmering\CarApp\CarApp\obj\Debug\net8.0\CarApp - K.pdb
+C:\Users\Khadr\OneDrive\Skrivebord\Programmering\CarApp\CarApp\obj\Debug\net8.0\CarApp - K.genruntimeconfig.cache
+C:\Users\Khadr\OneDrive\Skrivebord\Programmering\CarApp\CarApp\obj\Debug\net8.0\ref\CarApp - K.dll
