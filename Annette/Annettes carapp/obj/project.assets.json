@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Git projekter\\Projekter 1. semester\\Carapp\\Team15\\Annette\\Annettes carapp\\Annettes carapp.csproj",
+      "projectUniqueName": "C:\\Users\\annet\\Desktop\\Annette\\Annettes carapp\\Annettes carapp.csproj",
       "projectName": "Annettes carapp",
-      "projectPath": "C:\\Git projekter\\Projekter 1. semester\\Carapp\\Team15\\Annette\\Annettes carapp\\Annettes carapp.csproj",
+      "projectPath": "C:\\Users\\annet\\Desktop\\Annette\\Annettes carapp\\Annettes carapp.csproj",
       "packagesPath": "C:\\Users\\annet\\.nuget\\packages\\",
-      "outputPath": "C:\\Git projekter\\Projekter 1. semester\\Carapp\\Team15\\Annette\\Annettes carapp\\obj\\",
+      "outputPath": "C:\\Users\\annet\\Desktop\\Annette\\Annettes carapp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

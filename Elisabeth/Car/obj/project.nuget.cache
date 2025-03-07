@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "version": 2,
   "dgSpecHash": "ptOg3m77U2w=",
@@ -5,4 +6,13 @@
   "projectFilePath": "C:\\Users\\ehell\\Desktop\\Datamatiker\\Kodeøvelse\\Car\\Car\\Car.csproj",
   "expectedPackageFiles": [],
   "logs": []
+=======
+{
+  "version": 2,
+  "dgSpecHash": "ptOg3m77U2w=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ehell\\Desktop\\Datamatiker\\Kodeøvelse\\Car\\Car\\Car.csproj",
+  "expectedPackageFiles": [],
+  "logs": []
+>>>>>>> c6ac4874b3687bd9a6de559dbe7f6f0ecbbea542
 }
