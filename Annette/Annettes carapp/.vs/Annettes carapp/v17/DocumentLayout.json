@@ -1,18 +1,22 @@
 {
   "Version": 1,
-<<<<<<< HEAD
   "WorkspaceRootPath": "C:\\Git projekter\\Projekter 1. semester\\Carapp\\Team15\\Annette\\Annettes carapp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{112893AE-D9BE-4B75-B0A0-0FCFD8B75428}|Annettes carapp.csproj|c:\\git projekter\\projekter 1. semester\\carapp\\team15\\annette\\annettes carapp\\genre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{112893AE-D9BE-4B75-B0A0-0FCFD8B75428}|Annettes carapp.csproj|solutionrelative:genre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-=======
-  "WorkspaceRootPath": "F:\\Freelance\\Documents\\Datamatikker Udd\\Programmering\\Team15\\Annette\\Annettes carapp\\",
-  "Documents": [
+      "AbsoluteMoniker": "D:0:0:{112893AE-D9BE-4B75-B0A0-0FCFD8B75428}|Annettes carapp.csproj|c:\\git projekter\\projekter 1. semester\\carapp\\team15\\annette\\annettes carapp\\trip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{112893AE-D9BE-4B75-B0A0-0FCFD8B75428}|Annettes carapp.csproj|solutionrelative:trip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
     {
-      "AbsoluteMoniker": "D:0:0:{112893AE-D9BE-4B75-B0A0-0FCFD8B75428}|Annettes carapp.csproj|f:\\freelance\\documents\\datamatikker udd\\programmering\\team15\\annette\\annettes carapp\\pris.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{112893AE-D9BE-4B75-B0A0-0FCFD8B75428}|Annettes carapp.csproj|solutionrelative:pris.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
->>>>>>> 269f9c9aac334fae5d7b79125feb3965f0611001
+      "AbsoluteMoniker": "D:0:0:{112893AE-D9BE-4B75-B0A0-0FCFD8B75428}|Annettes carapp.csproj|c:\\git projekter\\projekter 1. semester\\carapp\\team15\\annette\\annettes carapp\\car.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{112893AE-D9BE-4B75-B0A0-0FCFD8B75428}|Annettes carapp.csproj|solutionrelative:car.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{112893AE-D9BE-4B75-B0A0-0FCFD8B75428}|Annettes carapp.csproj|c:\\git projekter\\projekter 1. semester\\carapp\\team15\\annette\\annettes carapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{112893AE-D9BE-4B75-B0A0-0FCFD8B75428}|Annettes carapp.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{112893AE-D9BE-4B75-B0A0-0FCFD8B75428}|Annettes carapp.csproj|c:\\git projekter\\projekter 1. semester\\carapp\\team15\\annette\\annettes carapp\\wheel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{112893AE-D9BE-4B75-B0A0-0FCFD8B75428}|Annettes carapp.csproj|solutionrelative:wheel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,49 +26,62 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-<<<<<<< HEAD
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Genre.cs",
-              "DocumentMoniker": "C:\\Git projekter\\Projekter 1. semester\\Carapp\\Team15\\Annette\\Annettes carapp\\Genre.cs",
-              "RelativeDocumentMoniker": "Genre.cs",
-              "ToolTip": "C:\\Git projekter\\Projekter 1. semester\\Carapp\\Team15\\Annette\\Annettes carapp\\Genre.cs",
-              "RelativeToolTip": "Genre.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-07T08:58:29.434Z",
-              "EditorCaption": ""
-=======
           "SelectedChildIndex": 2,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Git projekter\\Projekter 1. semester\\Carapp\\Team15\\Annette\\Annettes carapp\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Git projekter\\Projekter 1. semester\\Carapp\\Team15\\Annette\\Annettes carapp\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAgwDYAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-13T09:34:45.374Z",
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Car.cs",
+              "DocumentMoniker": "C:\\Git projekter\\Projekter 1. semester\\Carapp\\Team15\\Annette\\Annettes carapp\\Car.cs",
+              "RelativeDocumentMoniker": "Car.cs",
+              "ToolTip": "C:\\Git projekter\\Projekter 1. semester\\Carapp\\Team15\\Annette\\Annettes carapp\\Car.cs",
+              "RelativeToolTip": "Car.cs",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAkwHsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-13T07:50:34.118Z",
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Pris.cs",
-              "DocumentMoniker": "F:\\Freelance\\Documents\\Datamatikker Udd\\Programmering\\Team15\\Annette\\Annettes carapp\\Pris.cs",
-              "RelativeDocumentMoniker": "Pris.cs",
-              "ToolTip": "F:\\Freelance\\Documents\\Datamatikker Udd\\Programmering\\Team15\\Annette\\Annettes carapp\\Pris.cs",
-              "RelativeToolTip": "Pris.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "Trip.cs",
+              "DocumentMoniker": "C:\\Git projekter\\Projekter 1. semester\\Carapp\\Team15\\Annette\\Annettes carapp\\Trip.cs",
+              "RelativeDocumentMoniker": "Trip.cs",
+              "ToolTip": "C:\\Git projekter\\Projekter 1. semester\\Carapp\\Team15\\Annette\\Annettes carapp\\Trip.cs",
+              "RelativeToolTip": "Trip.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADAAAACJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-07T08:54:58.6Z",
+              "WhenOpened": "2025-03-07T08:58:29.434Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
->>>>>>> 269f9c9aac334fae5d7b79125feb3965f0611001
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Wheel.cs",
+              "DocumentMoniker": "C:\\Git projekter\\Projekter 1. semester\\Carapp\\Team15\\Annette\\Annettes carapp\\Wheel.cs",
+              "RelativeDocumentMoniker": "Wheel.cs",
+              "ToolTip": "C:\\Git projekter\\Projekter 1. semester\\Carapp\\Team15\\Annette\\Annettes carapp\\Wheel.cs",
+              "RelativeToolTip": "Wheel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-13T10:08:29.626Z",
+              "EditorCaption": ""
             }
           ]
         }

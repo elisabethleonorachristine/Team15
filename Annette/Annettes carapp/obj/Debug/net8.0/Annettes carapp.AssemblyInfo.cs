@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Annettes carapp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e213ad2458afcb70b21ce5dd1ce203c76cdb330d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3442c2f26c271b335488ba6796b591d888b09d98")]
 [assembly: System.Reflection.AssemblyProductAttribute("Annettes carapp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Annettes carapp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

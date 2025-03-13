@@ -9,9 +9,9 @@ namespace Annettes_carapp
         static void Main(string[] args)
         {
             //Opret instanser af car (bilobjekter)
-            Car car1 = new Car("Skoda", "Octavia", 2020, 'M', "benzin", 20, 50000);
-            Car car2 = new Car("Audi", "A1", 2018, 'A', "diesel", 18, 20000);
-            Car car3 = new Car("Toyota", "Corolla", 2024, 'M', "benzin", 16, 10000);
+            Car car1 = new Car("Skoda", "Octavia", 2020, 'M', FuelType.Benzin, 20, 50000);
+            Car car2 = new Car("Audi", "A1", 2018, 'A', FuelType.Diesel, 18, 20000);
+            Car car3 = new Car("Toyota", "Corolla", 2024, 'M', FuelType.Electric, 16, 10000);
 
             //Liste til at gemme bilerne
             List<Car> cars = new List<Car> {car1, car2, car3};
@@ -52,7 +52,7 @@ namespace Annettes_carapp
                         Console.Write("\nVælg en bil (1, 2 eller 3): ");
                         carIndex = Convert.ToInt32(Console.ReadLine()) - 1;
                         if (carIndex >= 0 && carIndex < cars.Count)
-                            cars[carIndex].CalculateTripPrice();
+                            cars[carIndex].PrintAllTrips();
                         else
                             Console.WriteLine("Ugyldigt valg.");
                         break;
@@ -93,12 +93,13 @@ namespace Annettes_carapp
             foreach (var car in cars)
             {
                 Console.WriteLine("| {0,-12} | {1,-10} | {2,-6} | {3,-10:F1} | {4,-10:F0} | {5,-10} | {6,-7} |",
-                    car.Brand, car.Model, car.Year, car.KmPerLiter, car.Odometer, car.FuelType, car.GearType);
+                    car.Brand, car.Model, car.Year, car.KmPerLiter, car.Odometer, car.Fuel, car.GearType);
             }
 
             Console.WriteLine("---------------------------------------------------------------------------------------");
         }
 
+        
 
 
 

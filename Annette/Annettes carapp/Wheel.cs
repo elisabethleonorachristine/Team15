@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Annettes_carapp
 {
-    class Pris
+    class Wheel
     {
     }
 }

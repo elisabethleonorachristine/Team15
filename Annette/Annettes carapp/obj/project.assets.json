@@ -8,39 +8,23 @@
     "net8.0": []
   },
   "packageFolders": {
-<<<<<<< HEAD
     "C:\\Users\\annet\\.nuget\\packages\\": {},
-=======
-    "C:\\Users\\Michael\\.nuget\\packages\\": {},
->>>>>>> 269f9c9aac334fae5d7b79125feb3965f0611001
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "C:\\Git projekter\\Projekter 1. semester\\Carapp\\Team15\\Annette\\Annettes carapp\\Annettes carapp.csproj",
       "projectName": "Annettes carapp",
       "projectPath": "C:\\Git projekter\\Projekter 1. semester\\Carapp\\Team15\\Annette\\Annettes carapp\\Annettes carapp.csproj",
       "packagesPath": "C:\\Users\\annet\\.nuget\\packages\\",
       "outputPath": "C:\\Git projekter\\Projekter 1. semester\\Carapp\\Team15\\Annette\\Annettes carapp\\obj\\",
-=======
-      "projectUniqueName": "F:\\Freelance\\Documents\\Datamatikker Udd\\Programmering\\Team15\\Annette\\Annettes carapp\\Annettes carapp.csproj",
-      "projectName": "Annettes carapp",
-      "projectPath": "F:\\Freelance\\Documents\\Datamatikker Udd\\Programmering\\Team15\\Annette\\Annettes carapp\\Annettes carapp.csproj",
-      "packagesPath": "C:\\Users\\Michael\\.nuget\\packages\\",
-      "outputPath": "F:\\Freelance\\Documents\\Datamatikker Udd\\Programmering\\Team15\\Annette\\Annettes carapp\\obj\\",
->>>>>>> 269f9c9aac334fae5d7b79125feb3965f0611001
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-<<<<<<< HEAD
         "C:\\Users\\annet\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-        "C:\\Users\\Michael\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> 269f9c9aac334fae5d7b79125feb3965f0611001
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -67,11 +51,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-<<<<<<< HEAD
       "SdkAnalysisLevel": "9.0.100"
-=======
-      "SdkAnalysisLevel": "9.0.200"
->>>>>>> 269f9c9aac334fae5d7b79125feb3965f0611001
     },
     "frameworks": {
       "net8.0": {
@@ -92,12 +72,16 @@
             "privateAssets": "all"
           }
         },
-<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
-=======
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
->>>>>>> 269f9c9aac334fae5d7b79125feb3965f0611001
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Git projekter\\Projekter 1. semester\\Carapp\\Team15\\Annette\\Annettes carapp\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

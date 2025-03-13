@@ -6,6 +6,15 @@ using System.Threading.Tasks;
 
 namespace Annettes_carapp
 {
+    //Fueltype enum
+    public enum FuelType
+    {
+        Benzin,
+        Diesel,
+        Electric,
+        Hybrid
+    }
+
     internal class Car
     {
         private string brand;
@@ -13,38 +22,20 @@ namespace Annettes_carapp
         private int year;
         private char gearType;
         private double odometer;
-        private string fuelType;
-        private double literPricePetrol= 13.49;
-        private double literPriceDiesel= 12.29;
         private bool isEngineOn;
         private double kmPerLiter;
-        private double distance;
+        private FuelType fuelType;
+        private List<Trip> trips;
 
         //Egenskaber for adgang til attributter
-        public string Brand
-        {
-            get { return brand; }
-            private set { brand = value; }
-        }
-        public string Model
-        {
-            get { return model; }
-            private set { model = value; }
-        }
-        public int Year
-        {
-            get { return year; }
-            private set {  year = value; }
-        }
-        public char GearType
-        {
-            get { return gearType;}
-            private set { gearType = value; }
-        }
+        public string Brand {get { return brand; } private set { brand = value; }}
+        public string Model {get { return model; } private set { model = value; }}
+        public int Year {get { return year; } private set {  year = value; }}
+        public char GearType {get { return gearType;} private set { gearType = value; }}
         public double Odometer
         {
             get { return odometer; }
-            private set // Kun metoder i klassen kan ændre odometeret
+            private set
             {
                 if (value >= odometer) // Odometer kan ikke gå baglæns
                     odometer = value;
@@ -52,34 +43,22 @@ namespace Annettes_carapp
                     Console.WriteLine("Fejl: Odometer kan ikke sættes lavere end den nuværende værdi.");
             }
         }
-        public string FuelType
-        {
-            get { return fuelType; }
-            private set
-            {
-                if (value.ToLower() == "benzin" || value.ToLower() == "diesel")
-                    fuelType = value.ToLower();
-                else
-                    Console.WriteLine("Fejl: Brændstoftype skal være 'benzin' eller 'diesel'.");
-            }
-        }
-        public double KmPerLiter
-        {
-            get { return kmPerLiter; }
-            private set { kmPerLiter = value; }
-        }
+        public FuelType Fuel {get { return fuelType; } private set { fuelType = value; }}
+
+        public double KmPerLiter {get { return kmPerLiter; } private set { kmPerLiter = value; }}
 
         //Constructor til at initialisere bilen
-        public Car(string brand, string model, int year, char geartype, string fuelType, double kmPerLiter, double odometer = 0)
+        public Car(string brand, string model, int year, char geartype, FuelType fuel, double kmPerLiter, double odometer = 0)
         {
             Brand = brand;
             Model = model;
             Year = year;
             GearType = geartype;
             Odometer = odometer;
-            FuelType = fuelType;
+            Fuel = fuel;
             KmPerLiter = kmPerLiter;
             isEngineOn = false; // Standard: motoren er slukket ved start
+            trips = new List<Trip>(); //Initialiserer trips-listen
         }
 
         //Læser bilens detaljer
@@ -97,8 +76,26 @@ namespace Annettes_carapp
             Console.Write("Indtast gear type (M for manuel, A for automatisk): ");
             gearType = Convert.ToChar(Console.ReadLine().ToUpper());
 
-            Console.Write("Indtast brændstoftype (benzin eller diesel): ");
-            fuelType = Console.ReadLine().ToLower();
+            //Menu hvor man kan vælge fueltype
+            Console.WriteLine("Vælg brændstoftype:");
+            foreach (FuelType ft in Enum.GetValues(typeof(FuelType)))
+            {
+                // Vi antager, at enum'ens underliggende værdier starter ved 0
+                Console.WriteLine($"{(int)ft} - {ft}");
+            }
+
+            // Læs brugerens input og konverterer det til FuelType
+            Console.Write("Indtast nummeret for brændstoftype: ");
+            string input = Console.ReadLine();
+            int choice;
+            while (!int.TryParse(input, out choice) ||
+                   !Enum.IsDefined(typeof(FuelType), choice))
+            {
+                Console.Write("Ugyldigt valg. Indtast venligst et gyldigt nummer: ");
+                input = Console.ReadLine();
+            }
+            // Konverter tallet til enum-værdien
+            fuelType = (FuelType)choice;
 
             Console.Write("Indtast km per liter: ");
             kmPerLiter = Convert.ToDouble(Console.ReadLine());
@@ -107,7 +104,7 @@ namespace Annettes_carapp
             odometer = Convert.ToDouble(Console.ReadLine());
         }
 
-        //Simulerer en køretur
+        //Simulerer en køretur og gemmer den i trips-listen
         public void Drive()
         {
             Console.WriteLine("\nHar du tændt bilen (ja elller nej)?");
@@ -116,11 +113,20 @@ namespace Annettes_carapp
             if (motor == "ja")
             {
                 isEngineOn = true;
-                Console.WriteLine("\nHvor langt har du kørt?");
-                distance = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("\nIndtast distance i km: ");
+                double distance = Convert.ToDouble(Console.ReadLine());
 
+                Console.WriteLine("Indtast starttidspunkt (hh:mm): ");
+                DateTime startTime = DateTime.Parse(Console.ReadLine());
+
+                Console.WriteLine("Indtast sluttidspunkt (hh:mm): ");
+                DateTime endTime = DateTime.Parse(Console.ReadLine());
+
+                //Opretter en ny tur
+                Trip newTrip = new Trip(distance, DateTime.Now, startTime, endTime);
+                trips.Add(newTrip);
                 odometer += distance; //Opdaterer odometeret
-                Console.WriteLine($"\nBilens odometer er nu på: {odometer}km");
+                Console.WriteLine($"\nTuren er gemt. Bilens odometer er nu på: {odometer}km");
             }
             else
             {
@@ -128,34 +134,41 @@ namespace Annettes_carapp
             }
         }
 
-        //Beregner prisen for en tur baseret på brændstoftype
-        public void CalculateTripPrice()
+
+        //Literpris baseret på brændstoftype
+        public double GetFuelPrice()
         {
-            if (fuelType != "benzin" && fuelType != "diesel")
+            switch (Fuel)
             {
-                Console.WriteLine("\nUgyldig brændstoftype.");
+                case FuelType.Benzin: return 13.49;
+                case FuelType.Diesel: return 12.29;
+                case FuelType.Electric: return 10;
+                case FuelType.Hybrid: return 11;
+                default:
+                    throw new Exception("Ugyldig Brændstoftype");
+            }
+        }
+        
+        //Printer turens detaljer
+        public void PrintAllTrips()
+        {
+            if (trips.Count == 0)
+            {
+                Console.WriteLine("\nIngen registrerede ture.");
                 return;
             }
 
-            double fuelNeeded = distance / kmPerLiter; //beregner nødvendigt brændstof
-
-            //Beregning af turpris baseret på brændstoftype
-            double tripCost;
-            if (fuelType == "diesel")
+            Console.WriteLine("\n--- Alle registrerede ture ---");
+            foreach (var trip in trips)
             {
-                tripCost = fuelNeeded * literPriceDiesel;
+                trip.PrintTripDetails(this); // Sender bilen med som parameter
             }
-            else
-            {
-                tripCost = fuelNeeded * literPricePetrol;
-            }
-            Console.WriteLine($"\nBrændstofomkostninger for turen på {distance}km: {tripCost}kr");
         }
-        
+
         //Udskriver bilens detaljer
         public void PrintCarDetails()
         {
-            Console.WriteLine($"\nDette er din bil: \nBilmærke: {brand} \nModel: {model} \nÅrgang: {year} \nGear: {gearType} \nBrændstoftype: {fuelType} \nKm/l: {kmPerLiter} \nOdometer: {odometer} km");
+            Console.WriteLine($"\nDette er din bil: \nBilmærke: {Brand} \nModel: {Model} \nÅrgang: {Year} \nGear: {GearType} \nBrændstoftype: {Fuel} \nKm/l: {KmPerLiter} \nOdometer: {Odometer} km");
         }
     }
 }
