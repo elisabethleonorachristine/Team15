@@ -1,4 +1,6 @@
-﻿namespace CarApp.Vehicles
+﻿using static CarApp.Vehicles.Car;
+
+namespace CarApp.Vehicles
 {
     public class DinBil
     {
@@ -34,24 +36,46 @@
                 Console.Write("Invalid input. Please enter a valid number: ");
             }
 
-            string fuelType;
-            do
+            FuelType fuelType;
+            while (true)
             {
-                Console.Write("Enter fuel type (benzin/b or diesel/d): ");
-                fuelType = Console.ReadLine()?.Trim().ToLower();
+                Console.Write("Enter fuel type (benzin, diesel, electric, hybrid): ");
+                string fuelInput = Console.ReadLine()?.Trim().ToLower();
 
-                if (fuelType == "b") fuelType = "benzin";
-                if (fuelType == "d") fuelType = "diesel";
-
-                if (string.IsNullOrWhiteSpace(fuelType) || (fuelType != "benzin" && fuelType != "diesel"))
+                switch (fuelInput)
                 {
-                    Console.WriteLine("Invalid input. Please enter 'benzin' (b) or 'diesel' (d). Try again.");
+                    case "benzin":
+                    case "b":
+                        fuelType = FuelType.Benzin;
+                        break;
+                    case "diesel":
+                    case "d":
+                        fuelType = FuelType.Diesel;
+                        break;
+                    case "electric":
+                    case "e":
+                        fuelType = FuelType.Electric;
+                        break;
+                    case "hybrid":
+                    case "h":
+                        fuelType = FuelType.Hybrid;
+                        break;
+                    default:
+                        Console.WriteLine("Invalid input. Please enter 'benzin', 'diesel', 'electric', or 'hybrid'.");
+                        continue;
                 }
+                break;
+            }
 
-            } while (string.IsNullOrWhiteSpace(fuelType) || (fuelType != "benzin" && fuelType != "diesel"));
+            double fuelEfficiency;
+            Console.Write("Enter fuel efficiency (km per liter/kWh per km): ");
+            while (!double.TryParse(Console.ReadLine(), out fuelEfficiency) || fuelEfficiency <= 0)
+            {
+                Console.Write("Invalid input. Please enter a valid fuel efficiency: ");
+            }
 
             // Opretter bilen med alle oplysninger
-            userCar = new Car(yourCarBrand, yourCarModel, yourCarYear, yourGearType, yourCarMilage, fuelType);
+            userCar = new Car(yourCarBrand, yourCarModel, yourCarYear, yourGearType, yourCarMilage, fuelType, fuelEfficiency);
 
             // Udskriv bilens information
             Console.WriteLine("\nCar details have been saved.");

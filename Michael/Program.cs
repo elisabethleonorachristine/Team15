@@ -4,6 +4,7 @@ using System.Runtime.ConstrainedExecution;
 using System.Security.Cryptography.X509Certificates;
 using CarApp.Vehicles; 
 using CarApp.TeamCars;
+using static CarApp.Vehicles.Car;
 
 
 namespace CarApp
@@ -32,7 +33,7 @@ namespace CarApp
 
             do
             {
-                Console.WriteLine("Press 1 for Read Car Details \nPress 2 for Drive \nPress 3 for Calculate Trip Price \nPress 4 for IsPalindrome \nPress 5 for Print Car Detail \nPress 6 Print All Team Car \nPress 7 to Exit");
+                Console.WriteLine("Press 1 for Read Car Details \nPress 2 for Trip \nPress 3 for Calculate Trip Price(Removed) \nPress 4 for IsPalindrome \nPress 5 for Print Car Detail \nPress 6 Print All Team Car \nPress 7 to Exit");
                 if (int.TryParse(Console.ReadLine(), out MenuOption))
                 {
                     switch (MenuOption)
@@ -47,14 +48,14 @@ namespace CarApp
 
                         case 2:
                             Console.Clear();
-                            CheckCarAviability();
+                            StartTrip();
                             Console.ReadLine();
                             Console.Clear();
                             break;
 
                         case 3:
                             Console.Clear();
-                            double distance = Trip();
+                            ShowAllTrips();
                             Console.ReadLine();
                             Console.Clear();
                             break;
@@ -123,34 +124,38 @@ namespace CarApp
             while (true);
         }
 
- 
 
-        static void CheckCarAviability()
+        static void StartTrip()
         {
             if (DinBil.userCar == null)
             {
                 Console.WriteLine("No car details available. Please enter car details first (Option 1).");
                 return;
             }
+            DinBil.userCar.IsCarTurnedOn();
 
-            DinBil.userCar.Drive();
-
-        }
-        static double Trip()
-        {
-            
-            Console.Write("What is your current travel distance? ");            
-            
-            while (!double.TryParse(Console.ReadLine(), out distance) || distance < 0)
+            // Indhent turens distance
+            Console.Write("Enter the distance you want to drive (km): ");
+            if (!double.TryParse(Console.ReadLine(), out double distance) || distance <= 0)
             {
                 Console.WriteLine("Invalid input. Please enter a positive number.");
-                Console.Write("What is your current travel distance? ");
+                return;
             }
-            CalculateTripCost(distance);
-            return distance;
+            Console.Clear();
+            // Registrer starttidspunkt
+            DateTime startTime = DateTime.Now;
+            Console.WriteLine("Press any key to stop the trip...");
+            Console.ReadKey();
 
+            // Registrer sluttidspunkt
+            DateTime endTime = DateTime.Now;
+
+            // Opret turen og send den til bilen
+            Trip newTrip = new Trip(distance, startTime, endTime);
+            DinBil.userCar.Drive(newTrip);
         }
-        static void CalculateTripCost(double distance)
+
+        static void ShowAllTrips()
         {
             if (DinBil.userCar == null)
             {
@@ -158,17 +163,9 @@ namespace CarApp
                 return;
             }
 
-            string fuelType = DinBil.userCar.fuelType; // Hent bilens fuelType
-
-            double fuelPrice = (fuelType == "benzin") ? 13.49 : 12.29;
-            double kmPerL = 15;
-
-            double fuelNeeded = Math.Round(distance / kmPerL, 2);
-            double tripCost = Math.Round(fuelNeeded * fuelPrice, 2);
-
-            Console.WriteLine($"\nFuel needed: {fuelNeeded} L");
-            Console.WriteLine($"Total trip cost: {tripCost} kr\n");
+            DinBil.userCar.PrintAllTrips(DinBil.userCar.GetFuelPrice()); 
         }
+
 
         static bool IsPalindrome(int km)
         {
