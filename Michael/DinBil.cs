@@ -1,4 +1,4 @@
-﻿namespace CarApp.Michael
+﻿namespace CarApp.Vehicles
 {
     public class DinBil
     {

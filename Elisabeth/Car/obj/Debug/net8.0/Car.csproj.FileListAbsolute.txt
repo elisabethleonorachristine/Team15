@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\ehell\Desktop\Datamatiker\Kodeøvelse\Car\Car\obj\Debug\net8.0\Car.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\ehell\Desktop\Datamatiker\Kodeøvelse\Car\Car\obj\Debug\net8.0\Car.AssemblyInfoInputs.cache
 C:\Users\ehell\Desktop\Datamatiker\Kodeøvelse\Car\Car\obj\Debug\net8.0\Car.AssemblyInfo.cs
@@ -12,3 +13,19 @@ C:\Users\ehell\Desktop\Datamatiker\Kodeøvelse\Car\Car\obj\Debug\net8.0\refint\C
 C:\Users\ehell\Desktop\Datamatiker\Kodeøvelse\Car\Car\obj\Debug\net8.0\Car.pdb
 C:\Users\ehell\Desktop\Datamatiker\Kodeøvelse\Car\Car\obj\Debug\net8.0\Car.genruntimeconfig.cache
 C:\Users\ehell\Desktop\Datamatiker\Kodeøvelse\Car\Car\obj\Debug\net8.0\ref\Car.dll
+=======
+C:\Users\ehell\Desktop\Datamatiker\Kodeøvelse\Car\Car\obj\Debug\net8.0\Car.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ehell\Desktop\Datamatiker\Kodeøvelse\Car\Car\obj\Debug\net8.0\Car.AssemblyInfoInputs.cache
+C:\Users\ehell\Desktop\Datamatiker\Kodeøvelse\Car\Car\obj\Debug\net8.0\Car.AssemblyInfo.cs
+C:\Users\ehell\Desktop\Datamatiker\Kodeøvelse\Car\Car\obj\Debug\net8.0\Car.csproj.CoreCompileInputs.cache
+C:\Users\ehell\Desktop\Datamatiker\Kodeøvelse\Car\Car\bin\Debug\net8.0\Car.exe
+C:\Users\ehell\Desktop\Datamatiker\Kodeøvelse\Car\Car\bin\Debug\net8.0\Car.deps.json
+C:\Users\ehell\Desktop\Datamatiker\Kodeøvelse\Car\Car\bin\Debug\net8.0\Car.runtimeconfig.json
+C:\Users\ehell\Desktop\Datamatiker\Kodeøvelse\Car\Car\bin\Debug\net8.0\Car.dll
+C:\Users\ehell\Desktop\Datamatiker\Kodeøvelse\Car\Car\bin\Debug\net8.0\Car.pdb
+C:\Users\ehell\Desktop\Datamatiker\Kodeøvelse\Car\Car\obj\Debug\net8.0\Car.dll
+C:\Users\ehell\Desktop\Datamatiker\Kodeøvelse\Car\Car\obj\Debug\net8.0\refint\Car.dll
+C:\Users\ehell\Desktop\Datamatiker\Kodeøvelse\Car\Car\obj\Debug\net8.0\Car.pdb
+C:\Users\ehell\Desktop\Datamatiker\Kodeøvelse\Car\Car\obj\Debug\net8.0\Car.genruntimeconfig.cache
+C:\Users\ehell\Desktop\Datamatiker\Kodeøvelse\Car\Car\obj\Debug\net8.0\ref\Car.dll
+>>>>>>> c6ac4874b3687bd9a6de559dbe7f6f0ecbbea542
