@@ -33,7 +33,7 @@ namespace CarApp
 
             do
             {
-                Console.WriteLine("Press 1 for Read Car Details \nPress 2 for Trip \nPress 3 for Calculate Trip Price(Removed) \nPress 4 for IsPalindrome \nPress 5 for Print Car Detail \nPress 6 Print All Team Car \nPress 7 to Exit");
+                Console.WriteLine("Press 1 for Read Car Details \nPress 2 for Trip \nPress 3 for Show Trips \nPress 4 for IsPalindrome \nPress 5 for Print Car Detail \nPress 6 Print All Team Car \nPress 7 to Exit");
                 if (int.TryParse(Console.ReadLine(), out MenuOption))
                 {
                     switch (MenuOption)

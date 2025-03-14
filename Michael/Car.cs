@@ -86,7 +86,7 @@
         }
 
         public void Drive(Trip newTrip)
-        {           
+        {            
             trips.Add(newTrip);
             AddMilage((int)newTrip.tripDistance);
             Console.WriteLine($"Du har kørt {newTrip.tripDistance} km.");
@@ -102,7 +102,7 @@
                 return;
             }
 
-            Console.WriteLine("\nListe over kørsler:");
+            Console.WriteLine("Liste over kørsler:\n");
             foreach (Trip trip in trips)
             {
                 trip.PrintTripDetails(fuelEfficiency, literPrice);

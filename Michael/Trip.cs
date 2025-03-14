@@ -51,7 +51,7 @@ namespace CarApp.Vehicles
             Console.WriteLine($"- Sluttid: {tripEndTime}");
             Console.WriteLine($"- Varighed: {CalculateDuration()}");
             Console.WriteLine($"- Brændstof brugt: {CalculateFuelUsed(kmPrLiter)} L");
-            Console.WriteLine($"- Turens pris: {CalculateTripPrice(literPrice, kmPrLiter)} kr\n");
+            Console.WriteLine($"- Turens pris: {CalculateTripPrice(kmPrLiter, literPrice)} kr\n");
         }
     }
 }
