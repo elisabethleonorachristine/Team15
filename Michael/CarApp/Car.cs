@@ -136,5 +136,27 @@
                 _ => 0
             };
         }
+        //Gemme metoder
+        public override string ToString()
+        {
+            return $"# Car: {carBrand}, {carModel}, {carYear}, {totalMilage}, -, {fuelType}, 01-01-{carYear}, {(gearType == 'A' ? "Automatic" : "Manual")}, {fuelEfficiency}";
+        }
+
+
+        public static Car FromString(string carData)
+        {
+            // Eksempel: # Car: Toyota, Corolla, 2015, -, -, Petrol, 01-01-2015, Automatic, 15.2
+            var parts = carData.Replace("# Car: ", "").Split(", ");
+            string brand = parts[0];
+            string model = parts[1];
+            int year = int.Parse(parts[2]);
+            int milage = int.Parse(parts[3]);
+
+            FuelType fuelType = Enum.Parse<FuelType>(parts[5]);
+            char gearType = parts[7].ToLower().Contains("auto") ? 'A' : 'M';
+            double fuelEfficiency = double.Parse(parts[8]);
+            return new Car(brand, model, year, gearType, milage, fuelType, fuelEfficiency);
+        }
+
     }
 }

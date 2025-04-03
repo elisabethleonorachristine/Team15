@@ -1,0 +1,12 @@
+# Car: Audi, tt, 2020, 0, -, Benzin, 01-01-2020, Automatic, 16,5
+
+# Car: BMW, 20, 2020, 0, -, Benzin, 01-01-2020, Automatic, 16,4
+
+# Car: BMW, 20, 2020, 0, -, Benzin, 01-01-2020, Automatic, 16,4
+Trip: 23,5, 03-04-2025, 10:57, 10:57
+
+# Car: mazda, 6, 1998, 14, -, Benzin, 01-01-1998, Manual, 13
+
+# Car: Honda, zx, 2023, 3735, -, Electric, 01-01-2023, Automatic, 16
+Trip: 235, 03-04-2025, 12:12, 12:12
+

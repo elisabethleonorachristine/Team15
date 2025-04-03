@@ -20,8 +20,8 @@ namespace CarApp
 
     class Program
     {
-        
-        
+        static DataHandler dataHandler = new DataHandler("cars.txt");
+
         static Car defaultAudi = new Car("Audi", "TT", 2022, 'A', 1000, Car.FuelType.Benzin, 15)
         {
             trips = new List<Trip>()
@@ -38,6 +38,18 @@ namespace CarApp
         }
         static void Menu()
         {
+            DataHandler handler = new DataHandler("cars.txt");
+            List<Car> cars = handler.LoadCars();
+
+            if (cars.Count > 0)
+            {
+                DinBil.userCar = cars.Last();  // Eller cars[0] hvis du hellere vil bruge den første
+                Console.WriteLine($"Din tidligere bil er blevet indlæst: {DinBil.userCar.carBrand} {DinBil.userCar.carModel}, {DinBil.userCar.carYear}");
+            }
+            else
+            {
+                Console.WriteLine(" Ingen tidligere gemt bil fundet. Du skal tilføje én via menuvalg 1.");
+            }
 
             char Choice;
             int MenuOption;
@@ -171,6 +183,9 @@ namespace CarApp
             // Opret turen og send den til bilen
             Trip newTrip = new Trip(distance, startTime, endTime);
             DinBil.userCar.Drive(newTrip);
+
+            dataHandler.SaveSingleCar(DinBil.userCar);
+
         }
 
         static void ShowAllTrips()
@@ -216,24 +231,45 @@ namespace CarApp
         }
         static void ShowAllCars()
         {
-            
-            Car michaelBil = defaultAudi;
-            AnnetteBil annetteBil = new TeamCars.AnnetteBil();
+            DataHandler handler = new DataHandler("cars.txt");
+            List<Car> allCars = handler.LoadCars();
 
-            Console.WriteLine($"Michael har en {michaelBil.carBrand} fra {michaelBil.carYear} med {michaelBil.totalMilage} km.");
-            
+            if (allCars.Count == 0)
+            {
+                Console.WriteLine("Ingen gemte biler blev fundet.");
+            }
+            else
+            {
+                Console.WriteLine("Gemte biler:\n");
+
+                foreach (Car car in allCars)
+                {
+                    Console.WriteLine($"- {car.carBrand} {car.carModel}, {car.carYear} | {car.totalMilage} km | {car.fuelType} | {car.fuelEfficiency} km/L");
+                }
+            }
+
+            // Tilføj eventuelt hardkodede biler også:
+            Console.WriteLine();
+            Console.WriteLine("Team Cars:");
+
+            // Michael (defaultAudi er stadig fin at vise som fast bil)
+            Console.WriteLine($"Michael har en {defaultAudi.carBrand} fra {defaultAudi.carYear} med {defaultAudi.totalMilage} km.");
+
+            // Annette
+            AnnetteBil annetteBil = new AnnetteBil();
             Console.WriteLine($"Annette har en {annetteBil.Brand} fra {annetteBil.Year} med {annetteBil.Odometer} km.");
-            
-            if(DinBil.userCar != null ) 
+
+            // Din bil
+            if (DinBil.userCar != null)
             {
                 Console.WriteLine($"Du har en {DinBil.userCar.carBrand} fra {DinBil.userCar.carYear} med {DinBil.userCar.totalMilage} km.");
-
             }
             else
             {
                 Console.WriteLine("Du har ikke indtastet din bil endnu.");
             }
         }
+
         static void ShowTripsByDate()
         {
             Console.Write("Enter a date (yyyy, yyyy-MM, or yyyy-MM-dd) to see trips: ");

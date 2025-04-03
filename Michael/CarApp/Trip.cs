@@ -51,5 +51,23 @@ namespace CarApp.Vehicles
             Console.WriteLine($"- Brændstof brugt: {CalculateFuelUsed(kmPrLiter)} L");
             Console.WriteLine($"- Turens pris: {CalculateTripPrice(kmPrLiter, literPrice)} kr\n");
         }
+
+        //Gemme metoder
+        public override string ToString()
+        {
+            return $"Trip: {tripDistance}, {tripDate:dd-MM-yyyy}, {tripStartTime:HH:mm}, {tripEndTime:HH:mm}";
+        }
+
+        public static Trip FromString(string tripData)
+        {
+            // Eksempel: Trip: 120.5, 12-03-2024, 08:30, 10:15
+            var parts = tripData.Replace("Trip: ", "").Split(", ");
+            double distance = double.Parse(parts[0]);
+            DateTime date = DateTime.ParseExact(parts[1], "dd-MM-yyyy", null);
+            DateTime startTime = DateTime.ParseExact($"{parts[1]} {parts[2]}", "dd-MM-yyyy HH:mm", null);
+            DateTime endTime = DateTime.ParseExact($"{parts[1]} {parts[3]}", "dd-MM-yyyy HH:mm", null);
+            return new Trip(distance, startTime, endTime);
+        }
+
     }
 }

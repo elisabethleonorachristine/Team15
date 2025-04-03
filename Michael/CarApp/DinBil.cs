@@ -77,6 +77,9 @@ namespace CarApp.Vehicles
             // Opretter bilen med alle oplysninger
             userCar = new Car(yourCarBrand, yourCarModel, yourCarYear, yourGearType, yourCarMilage, fuelType, fuelEfficiency);
 
+            DataHandler dataHandler = new DataHandler("cars.txt");
+            dataHandler.SaveSingleCar(userCar);
+
             // Udskriv bilens information
             Console.WriteLine("\nCar details have been saved.");
             userCar.MinBil();
