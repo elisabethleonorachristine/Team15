@@ -36,13 +36,22 @@ namespace CarApp.Vehicles
         // Beregn turens pris baseret på brændstofpris
         public double CalculateTripPrice( double fuelEfficiency, double literPrice)
         {
-            return Math.Round(CalculateFuelUsed(fuelEfficiency) * literPrice,2);
+            try
+            {
+                return Math.Round(CalculateFuelUsed(fuelEfficiency) * literPrice,2);
+            }
+            catch (DivideByZeroException)
+            {
+                Console.WriteLine("Fejl: Brændstofforbrug kan ikke være 0. Turens pris kunne ikke beregnes.");
+                return 0;
+            }
         }
 
         // Udskriv turens detaljer
-        public void PrintTripDetails(double kmPrLiter, double literPrice)
+        public void PrintTripDetails(double kmPrLiter, double literPrice, string carBrand)
         {
             Console.WriteLine($" Tur detaljer:");
+            Console.WriteLine($"- Mærke: {carBrand}");
             Console.WriteLine($"- Distance: {tripDistance} km");
             Console.WriteLine($"- Dato Oprettet: {tripDate.ToShortDateString()}");
             Console.WriteLine($"- Starttid: {tripStartTime}");

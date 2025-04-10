@@ -16,8 +16,12 @@ namespace CarApp
 
         public void SaveCars(List<Car> cars)
         {
-            using (StreamWriter writer = new StreamWriter(FilePath))
+            StreamWriter writer = null;
+
+            try
             {
+                writer = new StreamWriter(FilePath);
+
                 foreach (Car car in cars)
                 {
                     writer.WriteLine(car.ToString());
@@ -28,37 +32,63 @@ namespace CarApp
                     writer.WriteLine(); // tom linje mellem biler
                 }
             }
+            catch (IOException ex)
+            {
+                Console.WriteLine($"Fejl under skrivning: {ex.Message}");
+            }
+            finally
+            {
+                if (writer != null)
+                {
+                    writer.Close();
+                }
+
+                // Denne linje er flyttet herned – præcis som opgaven ønsker det:
+                Console.WriteLine("Data gemt i filen.");
+            }
         }
+
+
 
         public List<Car> LoadCars()
         {
             List<Car> cars = new List<Car>();
             Car currentCar = null;
 
-            if (!File.Exists(FilePath))
-                return cars;
-
-            using (StreamReader reader = new StreamReader(FilePath))
+            try
             {
-                string line;
-                while ((line = reader.ReadLine()) != null)
-                {
-                    if (string.IsNullOrWhiteSpace(line)) continue;
+                if (!File.Exists(FilePath))
+                    return cars;
 
-                    if (line.StartsWith("# Car:"))
+                using (StreamReader reader = new StreamReader(FilePath))
+                {
+                    string line;
+                    while ((line = reader.ReadLine()) != null)
                     {
-                        currentCar = Car.FromString(line);
-                        cars.Add(currentCar);
-                    }
-                    else if (line.StartsWith("Trip:") && currentCar != null)
-                    {
-                        currentCar.trips.Add(Trip.FromString(line));
+                        if (string.IsNullOrWhiteSpace(line)) continue;
+
+                        if (line.StartsWith("# Car:"))
+                        {
+                            currentCar = Car.FromString(line);
+                            cars.Add(currentCar);
+                        }
+                        else if (line.StartsWith("Trip:") && currentCar != null)
+                        {
+                            currentCar.trips.Add(Trip.FromString(line));
+                        }
                     }
                 }
             }
+            //Faktisk ikke brugt da vi opretter filen hvis den ikke findes via if (!File.Exists(FilePath))
+            catch (FileNotFoundException)
+            {
+                Console.WriteLine($"Filen '{FilePath}' blev ikke fundet (catch-blok). Ingen biler indlæst.");
+            }
+            
 
             return cars;
         }
+
 
 
         public void SaveSingleCar(Car newCar)

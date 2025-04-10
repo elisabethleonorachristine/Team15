@@ -20,8 +20,6 @@ namespace CarApp
 
     class Program
     {
-        static DataHandler dataHandler = new DataHandler("cars.txt");
-
         static Car defaultAudi = new Car("Audi", "TT", 2022, 'A', 1000, Car.FuelType.Benzin, 15)
         {
             trips = new List<Trip>()
@@ -44,11 +42,11 @@ namespace CarApp
             if (cars.Count > 0)
             {
                 DinBil.userCar = cars.Last();  // Eller cars[0] hvis du hellere vil bruge den første
-                Console.WriteLine($"Din tidligere bil er blevet indlæst: {DinBil.userCar.carBrand} {DinBil.userCar.carModel}, {DinBil.userCar.carYear}");
+                Console.WriteLine($"Din tidligere bil er blevet indlæst: {DinBil.userCar.carBrand} {DinBil.userCar.carModel}, {DinBil.userCar.carYear}\n");
             }
             else
             {
-                Console.WriteLine(" Ingen tidligere gemt bil fundet. Du skal tilføje én via menuvalg 1.");
+                Console.WriteLine("Ingen tidligere gemt bil fundet. Du skal tilføje én via menuvalg 1.\n");
             }
 
             char Choice;
@@ -157,36 +155,33 @@ namespace CarApp
 
         static void StartTrip()
         {
-            if (DinBil.userCar == null)
-            {
-                Console.WriteLine("No car details available. Please enter car details first (Option 1).");
-                return;
-            }
-            DinBil.userCar.IsCarTurnedOn();
+            Car selectedCar = ChooseCar();
 
-            // Indhent turens distance
-            Console.Write("Enter the distance you want to drive (km): ");
+            selectedCar.IsCarTurnedOn();
+
+            Console.Write("\nEnter the distance you want to drive (km): ");
             if (!double.TryParse(Console.ReadLine(), out double distance) || distance <= 0)
             {
                 Console.WriteLine("Invalid input. Please enter a positive number.");
                 return;
             }
+
             Console.Clear();
-            // Registrer starttidspunkt
+
             DateTime startTime = DateTime.Now;
             Console.WriteLine("Press any key to stop the trip...");
             Console.ReadKey();
 
-            // Registrer sluttidspunkt
             DateTime endTime = DateTime.Now;
 
-            // Opret turen og send den til bilen
             Trip newTrip = new Trip(distance, startTime, endTime);
-            DinBil.userCar.Drive(newTrip);
+            selectedCar.Drive(newTrip);
 
-            dataHandler.SaveSingleCar(DinBil.userCar);
-
+            // Gem bilen tilbage til filen (uanset om det er userCar eller ej)
+            new DataHandler("cars.txt").SaveSingleCar(selectedCar);
         }
+
+
 
         static void ShowAllTrips()
         {
@@ -318,10 +313,39 @@ namespace CarApp
                 Console.WriteLine($"Trips for '{userInput}':");
                 foreach (Trip trip in filteredTrips)
                 {
-                    trip.PrintTripDetails(carToCheck.fuelEfficiency, carToCheck.GetFuelPrice());
+                    trip.PrintTripDetails(carToCheck.fuelEfficiency, carToCheck.GetFuelPrice(), carToCheck.carBrand);
                 }
             }
         }
+        static Car ChooseCar()
+        {
+            List<Car> availableCars = new DataHandler("cars.txt").LoadCars(); // 🔥 load alle gemte biler
+
+            // Tilføj også team cars manuelt (valgfrit)
+            availableCars.Add(new Car("Audi", "TT", 2022, 'A', 1000, Car.FuelType.Benzin, 15));
+
+            AnnetteBil annetteBil = new AnnetteBil();
+            availableCars.Add(new Car(annetteBil.Brand, "AnnetteMobil", annetteBil.Year, 'A', (int)Math.Round(annetteBil.Odometer), Car.FuelType.Benzin, 16));
+
+            Console.WriteLine("Hvilken bil vil du køre med?\n");
+
+            for (int i = 0; i < availableCars.Count; i++)
+            {
+                Car c = availableCars[i];
+                Console.WriteLine($"[{i + 1}] {c.carBrand} {c.carModel} ({c.carYear}) - {c.totalMilage} km");
+            }
+
+            int choice;
+            Console.Write("\nIndtast bilnummer: ");
+            while (!int.TryParse(Console.ReadLine(), out choice) || choice < 1 || choice > availableCars.Count)
+            {
+                Console.Write("Ugyldigt valg. Prøv igen: ");
+            }
+
+            return availableCars[choice - 1];
+        }
+
+
 
     }
 }

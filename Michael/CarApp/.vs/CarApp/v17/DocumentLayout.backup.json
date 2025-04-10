@@ -3,19 +3,8 @@
   "WorkspaceRootPath": "F:\\Freelance\\Documents\\Datamatikker Udd\\Programmering\\Team15\\Michael\\CarApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EF12B55C-5F83-497B-9ACD-EC3C591082DE}|..\\CarAppTest\\CarAppTest.csproj|f:\\freelance\\documents\\datamatikker udd\\programmering\\team15\\michael\\carapptest\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5A1E7CC2-166C-44FF-9CA8-B1E29A6404F1}|CarApp.csproj|f:\\freelance\\documents\\datamatikker udd\\programmering\\team15\\michael\\carapp\\car.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5A1E7CC2-166C-44FF-9CA8-B1E29A6404F1}|CarApp.csproj|solutionrelative:car.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5A1E7CC2-166C-44FF-9CA8-B1E29A6404F1}|CarApp.csproj|f:\\freelance\\documents\\datamatikker udd\\programmering\\team15\\michael\\carapp\\datahandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5A1E7CC2-166C-44FF-9CA8-B1E29A6404F1}|CarApp.csproj|solutionrelative:datahandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5A1E7CC2-166C-44FF-9CA8-B1E29A6404F1}|CarApp.csproj|f:\\freelance\\documents\\datamatikker udd\\programmering\\team15\\michael\\carapp\\dinbil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5A1E7CC2-166C-44FF-9CA8-B1E29A6404F1}|CarApp.csproj|solutionrelative:dinbil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5A1E7CC2-166C-44FF-9CA8-B1E29A6404F1}|CarApp.csproj|f:\\freelance\\documents\\datamatikker udd\\programmering\\team15\\michael\\carapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -26,8 +15,19 @@
       "RelativeMoniker": "D:0:0:{5A1E7CC2-166C-44FF-9CA8-B1E29A6404F1}|CarApp.csproj|solutionrelative:trip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{5A1E7CC2-166C-44FF-9CA8-B1E29A6404F1}|CarApp.csproj|f:\\freelance\\documents\\datamatikker udd\\programmering\\team15\\michael\\carapp\\car.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A1E7CC2-166C-44FF-9CA8-B1E29A6404F1}|CarApp.csproj|solutionrelative:car.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A1E7CC2-166C-44FF-9CA8-B1E29A6404F1}|CarApp.csproj|f:\\freelance\\documents\\datamatikker udd\\programmering\\team15\\michael\\carapp\\dinbil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A1E7CC2-166C-44FF-9CA8-B1E29A6404F1}|CarApp.csproj|solutionrelative:dinbil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5A1E7CC2-166C-44FF-9CA8-B1E29A6404F1}|CarApp.csproj|f:\\freelance\\documents\\datamatikker udd\\programmering\\team15\\michael\\carapp\\anettebil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5A1E7CC2-166C-44FF-9CA8-B1E29A6404F1}|CarApp.csproj|solutionrelative:anettebil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF12B55C-5F83-497B-9ACD-EC3C591082DE}|..\\CarAppTest\\CarAppTest.csproj|f:\\freelance\\documents\\datamatikker udd\\programmering\\team15\\michael\\carapptest\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EF12B55C-5F83-497B-9ACD-EC3C591082DE}|..\\CarAppTest\\CarAppTest.csproj|f:\\freelance\\documents\\datamatikker udd\\programmering\\team15\\michael\\carapptest\\carapptest.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
@@ -49,7 +49,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -61,29 +61,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "DataHandler.cs",
               "DocumentMoniker": "F:\\Freelance\\Documents\\Datamatikker Udd\\Programmering\\Team15\\Michael\\CarApp\\DataHandler.cs",
               "RelativeDocumentMoniker": "DataHandler.cs",
               "ToolTip": "F:\\Freelance\\Documents\\Datamatikker Udd\\Programmering\\Team15\\Michael\\CarApp\\DataHandler.cs",
               "RelativeToolTip": "DataHandler.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAwFoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwDEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-03T07:47:29.678Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "UnitTest1.cs",
               "DocumentMoniker": "F:\\Freelance\\Documents\\Datamatikker Udd\\Programmering\\Team15\\Michael\\CarAppTest\\UnitTest1.cs",
               "RelativeDocumentMoniker": "..\\CarAppTest\\UnitTest1.cs",
-              "ToolTip": "F:\\Freelance\\Documents\\Datamatikker Udd\\Programmering\\Team15\\Michael\\CarAppTest\\UnitTest1.cs*",
-              "RelativeToolTip": "..\\CarAppTest\\UnitTest1.cs*",
-              "ViewState": "AgIAAHgAAAAAAAAAAAAkwK0AAAAAAAAAAAAAAA==",
+              "ToolTip": "F:\\Freelance\\Documents\\Datamatikker Udd\\Programmering\\Team15\\Michael\\CarAppTest\\UnitTest1.cs",
+              "RelativeToolTip": "..\\CarAppTest\\UnitTest1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJYAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T13:45:34.648Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-20T13:45:34.648Z"
             },
             {
               "$type": "Document",
@@ -99,68 +98,67 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "Trip.cs",
               "DocumentMoniker": "F:\\Freelance\\Documents\\Datamatikker Udd\\Programmering\\Team15\\Michael\\CarApp\\Trip.cs",
               "RelativeDocumentMoniker": "Trip.cs",
               "ToolTip": "F:\\Freelance\\Documents\\Datamatikker Udd\\Programmering\\Team15\\Michael\\CarApp\\Trip.cs",
               "RelativeToolTip": "Trip.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEUAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAA8wCAAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-13T09:57:59.589Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "DinBil.cs",
               "DocumentMoniker": "F:\\Freelance\\Documents\\Datamatikker Udd\\Programmering\\Team15\\Michael\\CarApp\\DinBil.cs",
               "RelativeDocumentMoniker": "DinBil.cs",
               "ToolTip": "F:\\Freelance\\Documents\\Datamatikker Udd\\Programmering\\Team15\\Michael\\CarApp\\DinBil.cs",
               "RelativeToolTip": "DinBil.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAswEYAAABIAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwEYAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-21T10:42:40.636Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "F:\\Freelance\\Documents\\Datamatikker Udd\\Programmering\\Team15\\Michael\\CarApp\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "F:\\Freelance\\Documents\\Datamatikker Udd\\Programmering\\Team15\\Michael\\CarApp\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAuwBYAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAABcAAAAAAAAAAAAcwDAAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-21T10:28:29.205Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Car.cs",
               "DocumentMoniker": "F:\\Freelance\\Documents\\Datamatikker Udd\\Programmering\\Team15\\Michael\\CarApp\\Car.cs",
               "RelativeDocumentMoniker": "Car.cs",
               "ToolTip": "F:\\Freelance\\Documents\\Datamatikker Udd\\Programmering\\Team15\\Michael\\CarApp\\Car.cs",
               "RelativeToolTip": "Car.cs",
-              "ViewState": "AgIAADoAAAAAAAAAAAAswFYAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAqwFMAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-21T10:34:33.848Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "AnetteBil.cs",
               "DocumentMoniker": "F:\\Freelance\\Documents\\Datamatikker Udd\\Programmering\\Team15\\Michael\\CarApp\\AnetteBil.cs",
               "RelativeDocumentMoniker": "AnetteBil.cs",
               "ToolTip": "F:\\Freelance\\Documents\\Datamatikker Udd\\Programmering\\Team15\\Michael\\CarApp\\AnetteBil.cs",
               "RelativeToolTip": "AnetteBil.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T10:40:38.649Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-21T10:40:38.649Z"
             },
             {
               "$type": "Document",

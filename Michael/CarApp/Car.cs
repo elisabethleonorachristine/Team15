@@ -81,9 +81,9 @@
         {            
             trips.Add(newTrip);
             AddMilage((int)newTrip.tripDistance);
-            Console.WriteLine($"Du har kørt {newTrip.tripDistance} km.");
+            Console.WriteLine($"Du har kørt {newTrip.tripDistance} km.\n");
 
-            newTrip.PrintTripDetails(fuelEfficiency, GetFuelPrice());
+            newTrip.PrintTripDetails(fuelEfficiency, GetFuelPrice(), carBrand);
         }
         
         
@@ -98,7 +98,7 @@
             Console.WriteLine("Liste over kørsler:\n");
             foreach (Trip trip in trips)
             {
-                trip.PrintTripDetails(fuelEfficiency, literPrice);
+                trip.PrintTripDetails(fuelEfficiency, literPrice, carBrand);
             }
         }
         public List<Trip> GetTripsByDate(DateTime date)
