@@ -16,37 +16,25 @@ namespace CarApp
 
         public void SaveCars(List<Car> cars)
         {
-            StreamWriter writer = null;
-
             try
             {
-                writer = new StreamWriter(FilePath);
-
-                foreach (Car car in cars)
+                using var writer = new StreamWriter(FilePath);
+                foreach (var car in cars)
                 {
-                    writer.WriteLine(car.ToString());
-                    foreach (Trip trip in car.trips)
-                    {
-                        writer.WriteLine(trip.ToString());
-                    }
-                    writer.WriteLine(); // tom linje mellem biler
+                    writer.WriteLine(car);
+                    foreach (var trip in car.trips)
+                        writer.WriteLine(trip);
+                    writer.WriteLine();
                 }
             }
             catch (IOException ex)
             {
                 Console.WriteLine($"Fejl under skrivning: {ex.Message}");
             }
-            finally
-            {
-                if (writer != null)
-                {
-                    writer.Close();
-                }
 
-                // Denne linje er flyttet herned – præcis som opgaven ønsker det:
-                Console.WriteLine("Data gemt i filen.");
-            }
+            Console.WriteLine("Data gemt i filen.");
         }
+
 
 
 

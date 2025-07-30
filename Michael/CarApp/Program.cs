@@ -2,8 +2,9 @@
 using System;
 using System.Runtime.ConstrainedExecution;
 using System.Security.Cryptography.X509Certificates;
-using CarApp.Vehicles; 
+using CarApp.Vehicles;
 using CarApp.TeamCars;
+using CarApp.Specialized;
 
 
 
@@ -15,20 +16,22 @@ namespace CarApp
     Sætning(Statement): En fuld programmeringslinje, der afsluttes med ; f.eks int sum = 2+4;
     Kodeblok: En gruppe af statements inden for { }, der udføres sammen.
     */
-    
-    
+
+
 
     class Program
     {
-        static Car defaultAudi = new Car("Audi", "TT", 2022, 'A', 1000, Car.FuelType.Benzin, 15)
+        static FuelCar defaultAudi = new FuelCar("Audi", "TT", 2022, 'A', 1000, Car.FuelType.Benzin,
+                                                   fuelLevel: 30, tankCapacity: 50, kmPerLiter: 15)
         {
-            trips = new List<Trip>()
+            trips = new List<Trip>
             {
-             new Trip(30, DateTime.Now.AddDays(-5), DateTime.Now.AddDays(-5).AddMinutes(20)),
-             new Trip(50, DateTime.Now.AddDays(-2), DateTime.Now.AddDays(-2).AddMinutes(35)),
-             new Trip(100, DateTime.Now.AddDays(-1), DateTime.Now.AddDays(-1).AddMinutes(60))
+                 new Trip(30, DateTime.Now.AddDays(-5), DateTime.Now.AddDays(-5).AddMinutes(20)),
+                 new Trip(50, DateTime.Now.AddDays(-2), DateTime.Now.AddDays(-2).AddMinutes(35)),
+                 new Trip(100, DateTime.Now.AddDays(-1), DateTime.Now.AddDays(-1).AddMinutes(60))
             }
         };
+
 
         static void Main(string[] args)
         {
@@ -54,7 +57,7 @@ namespace CarApp
 
             do
             {
-                Console.WriteLine("Press 1 for Read Car Details \nPress 2 for Trip \nPress 3 for Show Trips \nPress 4 for IsPalindrome \nPress 5 for Print Car Detail \nPress 6 Print All Team Car \nPress 7 for Show Trips By Date \nPress 8 to Exit");
+                Console.WriteLine("Press 1 for Read Car Details \nPress 2 for Trip \nPress 3 for Show Trips \nPress 4 for IsPalindrome \nPress 5 for Print Car Detail \nPress 6 Print All Team Car \nPress 7 for Show Trips By Date \nPress 8 for Taxi Test \nPress 9 to Exit");
                 if (int.TryParse(Console.ReadLine(), out MenuOption))
                 {
                     switch (MenuOption)
@@ -125,6 +128,12 @@ namespace CarApp
                             break;
 
                         case 8:
+                            Console.Clear();
+                            TaxiTest();
+                            Console.ReadLine();
+                            Console.Clear();
+                            break;
+                        case 9:
                             Console.WriteLine("Exiting the program...");
                             return;  // Stopper programmet
 
@@ -142,11 +151,11 @@ namespace CarApp
                 Console.WriteLine("Please Enter Y to continue, any other key to terminate");
                 string input = Console.ReadLine();
 
-                if (string.IsNullOrWhiteSpace(input) || Char.ToUpper(input[0])!= 'Y')
+                if (string.IsNullOrWhiteSpace(input) || Char.ToUpper(input[0]) != 'Y')
                 {
-                   break;
+                    break;
                 }
-                
+
                 Console.Clear();
             }
             while (true);
@@ -191,9 +200,9 @@ namespace CarApp
                 return;
             }
 
-            DinBil.userCar.PrintAllTrips(DinBil.userCar.GetFuelPrice()); 
+            DinBil.userCar.PrintAllTrips(DinBil.userCar.GetFuelPrice());
         }
-        
+
 
 
         static bool IsPalindrome(int km)
@@ -214,12 +223,12 @@ namespace CarApp
             if (isPalin)
             {
                 Console.WriteLine($"{original} is a palindrome!");
-                
+
             }
             else
             {
                 Console.WriteLine($"{original} is NOT a palindrome.");
-                
+
             }
 
             return isPalin;
@@ -239,7 +248,7 @@ namespace CarApp
 
                 foreach (Car car in allCars)
                 {
-                    Console.WriteLine($"- {car.carBrand} {car.carModel}, {car.carYear} | {car.totalMilage} km | {car.fuelType} | {car.fuelEfficiency} km/L");
+                    Console.WriteLine($"- {car.carBrand} {car.carModel}, {car.carYear} | {car.totalMilage} km | {car.fuelType} | {car.GetEfficiency()} km/L");
                 }
             }
 
@@ -313,19 +322,24 @@ namespace CarApp
                 Console.WriteLine($"Trips for '{userInput}':");
                 foreach (Trip trip in filteredTrips)
                 {
-                    trip.PrintTripDetails(carToCheck.fuelEfficiency, carToCheck.GetFuelPrice(), carToCheck.carBrand);
+                    trip.PrintTripDetails(carToCheck.GetEfficiency(), carToCheck.GetFuelPrice(), carToCheck.carBrand);
                 }
             }
         }
         static Car ChooseCar()
         {
-            List<Car> availableCars = new DataHandler("cars.txt").LoadCars(); // 🔥 load alle gemte biler
+            List<Car> availableCars = new DataHandler("cars.txt").LoadCars(); //  load alle gemte biler
 
-            // Tilføj også team cars manuelt (valgfrit)
-            availableCars.Add(new Car("Audi", "TT", 2022, 'A', 1000, Car.FuelType.Benzin, 15));
+            availableCars.Add(new FuelCar(
+             "Audi", "TT", 2022, 'A', 1000, Car.FuelType.Benzin,
+             fuelLevel: 30, tankCapacity: 50, kmPerLiter: 15));
 
+            // Tilføj AnnetteBil også som en FuelCar
             AnnetteBil annetteBil = new AnnetteBil();
-            availableCars.Add(new Car(annetteBil.Brand, "AnnetteMobil", annetteBil.Year, 'A', (int)Math.Round(annetteBil.Odometer), Car.FuelType.Benzin, 16));
+            availableCars.Add(new FuelCar(
+                annetteBil.Brand, "AnnetteMobil", annetteBil.Year, 'A',
+                (int)Math.Round(annetteBil.Odometer), Car.FuelType.Benzin, 
+                fuelLevel: 20, tankCapacity: 40, kmPerLiter: 16));
 
             Console.WriteLine("Hvilken bil vil du køre med?\n");
 
@@ -344,6 +358,61 @@ namespace CarApp
 
             return availableCars[choice - 1];
         }
+        static void TaxiTest()
+        {
+            Car chosenCar = ChooseCar();
+            Console.WriteLine($"\nDu har valgt: {chosenCar.carBrand} {chosenCar.carModel}\n");
+
+            if (chosenCar is not IEnergy energyCar)
+            {
+                Console.WriteLine("Denne bil understøtter ikke energistyring (IEnergy).");
+                return;
+            }
+
+            Taxi taxi = new Taxi(chosenCar, energyCar);
+
+            while (true)
+            {
+                Console.Write("Indtast distance i km (eller 'exit'): ");
+                string? input = Console.ReadLine()?.Trim().ToLower();
+                if (input == "exit") break;
+
+                if (!double.TryParse(input, out double km) || km <= 0)
+                {
+                    Console.WriteLine("Ugyldig distance.");
+                    continue;
+                }
+
+                /* ----- rækkevidde + evt. tankning ----- */
+                if (!chosenCar.CanDrive(km))
+                {
+                    double range = chosenCar.GetRange();     // public property/metode
+                    Console.WriteLine($"Bilen kan højst køre {range:F1} km lige nu.");
+                    Console.Write("Vil du tanke? (j/n): ");
+                    if (Console.ReadLine()?.Trim().ToLower().StartsWith("j") == true)
+                    {
+                        Console.Write("Hvor mange liter vil du tanke? ");
+                        if (double.TryParse(Console.ReadLine(), out double liters))
+                            taxi.RefuelTaxi(liters);
+                    }
+                    else continue;
+                }
+
+                /* ----- kør turen ----- */
+                taxi.DriveTrip(km);
+
+                Console.Write("\nVil du køre en tur mere? (j/n): ");
+                if (!Console.ReadLine()?.Trim().ToLower().StartsWith("j") == true)
+                    break;
+            }
+
+            Console.WriteLine("\nTak for i dag!");
+        }
+
+
+
+
+
 
 
 

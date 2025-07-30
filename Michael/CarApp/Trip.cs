@@ -12,6 +12,7 @@ namespace CarApp.Vehicles
         public DateTime tripStartTime { get; private set; }
         public DateTime tripEndTime { get; private set; }
 
+
         // Constructor til at initialisere en tur
         public Trip(double distance, DateTime startTime, DateTime endTime)
         {
@@ -20,8 +21,10 @@ namespace CarApp.Vehicles
             tripStartTime = startTime;
             tripEndTime = endTime;
         }
+        //Til IDrivable fra Car
+        public Trip(double distance)
+        : this(distance, DateTime.Now, DateTime.Now) { }
 
-        
         public TimeSpan CalculateDuration()
         {
             return tripEndTime - tripStartTime;

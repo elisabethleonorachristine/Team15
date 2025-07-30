@@ -1,10 +1,10 @@
-﻿using static CarApp.Vehicles.Car;
+﻿using CarApp.Specialized; 
+using static CarApp.Vehicles.Car;
 
 namespace CarApp.Vehicles
 {
     public class DinBil
     {
-        
         public static Car userCar = null;
 
         public void DinBilInfo()
@@ -22,11 +22,11 @@ namespace CarApp.Vehicles
                 Console.Write("Invalid input. Please enter a valid year: ");
             }
 
-            Console.Write("Which geartype is the car using? (A/M): ");
+            Console.Write("Which gear type is the car using? (A/M): ");
             char yourGearType;
             while (!char.TryParse(Console.ReadLine().ToUpper(), out yourGearType) || (yourGearType != 'A' && yourGearType != 'M'))
             {
-                Console.Write("Invalid input. Please enter a single character for gear type: ");
+                Console.Write("Invalid input. Please enter A or M: ");
             }
 
             int yourCarMilage;
@@ -67,20 +67,49 @@ namespace CarApp.Vehicles
                 break;
             }
 
-            double fuelEfficiency;
-            Console.Write("Enter fuel efficiency (km per liter/kWh per km): ");
-            while (!double.TryParse(Console.ReadLine(), out fuelEfficiency) || fuelEfficiency <= 0)
+            // Nu vælger vi biltype afhængigt af fuelType:
+            if (fuelType == FuelType.Electric)
             {
-                Console.Write("Invalid input. Please enter a valid fuel efficiency: ");
+                Console.Write("Enter battery capacity (kWh): ");
+                double batteryCapacity = double.Parse(Console.ReadLine());
+
+                Console.Write("Enter current battery level (kWh): ");
+                double batteryLevel = double.Parse(Console.ReadLine());
+
+                Console.Write("Enter kilometers per kWh: ");
+                double kmPerKwh = double.Parse(Console.ReadLine());
+
+                Console.Write("Enter estimated charge time (in hours): ");
+                double chargeTime = double.Parse(Console.ReadLine());
+
+                userCar = new ElectricCar(
+                    yourCarBrand, yourCarModel, yourCarYear, yourGearType,
+                    yourCarMilage, fuelType,
+                    batteryLevel, batteryCapacity, kmPerKwh, chargeTime
+                );
+            }
+            else
+            {
+                Console.Write("Enter fuel tank capacity (liters): ");
+                double tankCapacity = double.Parse(Console.ReadLine());
+
+                Console.Write("Enter current fuel level (liters): ");
+                double fuelLevel = double.Parse(Console.ReadLine());
+
+                Console.Write("Enter kilometers per liter: ");
+                double kmPerLiter = double.Parse(Console.ReadLine());
+
+                userCar = new FuelCar(
+                    yourCarBrand, yourCarModel, yourCarYear, yourGearType,
+                    yourCarMilage, fuelType,
+                    fuelLevel, tankCapacity, kmPerLiter
+                );
             }
 
-            // Opretter bilen med alle oplysninger
-            userCar = new Car(yourCarBrand, yourCarModel, yourCarYear, yourGearType, yourCarMilage, fuelType, fuelEfficiency);
-
+            // Gem og vis bilen
             DataHandler dataHandler = new DataHandler("cars.txt");
             dataHandler.SaveSingleCar(userCar);
 
-            // Udskriv bilens information
             Console.WriteLine("\nCar details have been saved.");
             userCar.MinBil();
         }
